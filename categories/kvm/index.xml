@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kvm on rlmitchell.github.io</title>
-    <link>https://example.com/categories/kvm/</link>
+    <link>https://rlmitchell.github.io/categories/kvm/</link>
     <description>Recent content in kvm on rlmitchell.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 30 May 2022 19:30:47 -0500</lastBuildDate>
     
-        <atom:link href="https://example.com/categories/kvm/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://rlmitchell.github.io/categories/kvm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to save the state of a KVM/qemu VM</title>
-      <link>https://example.com/2022/05/kvm-vm-save-state/</link>
+      <link>https://rlmitchell.github.io/2022/05/kvm-vm-save-state/</link>
       <pubDate>Mon, 30 May 2022 19:30:47 -0500</pubDate>
       
-      <guid>https://example.com/2022/05/kvm-vm-save-state/</guid>
+      <guid>https://rlmitchell.github.io/2022/05/kvm-vm-save-state/</guid>
       <description>How to save the state of a running KVM/qemu VM Virtualbox and VMWare player have a nice feature that lets you &amp;ldquo;pause&amp;rdquo; a VM and save its state/memory to disk. Here&amp;rsquo;s how to do that with KVM.
 List your running VMs $ virsh list Id Name State -------------------------------- 6 php_sandbox.1 running 13 website running $  &amp;ldquo;Suspend&amp;rdquo; the VM $ virsh managedsave php_sandbox.1 Domain php_sandbox.1 state saved by libvirt $  The managedsave command will take some time as it copies the VM&amp;rsquo;s RAM to disk.</description>
     </item>
     
     <item>
       <title>Disabling screen blanking in Ubuntu 20.04</title>
-      <link>https://example.com/2022/05/ubuntu-2004-disable-screen-blanking/</link>
+      <link>https://rlmitchell.github.io/2022/05/ubuntu-2004-disable-screen-blanking/</link>
       <pubDate>Mon, 30 May 2022 18:19:17 -0500</pubDate>
       
-      <guid>https://example.com/2022/05/ubuntu-2004-disable-screen-blanking/</guid>
+      <guid>https://rlmitchell.github.io/2022/05/ubuntu-2004-disable-screen-blanking/</guid>
       <description>How to disable screen blanking in Ubuntu 20.04 After disabling my screensaver and lockscreen on a KVM/qemu virtual machine, I noticed the screen would still go blank after a period of inactivity. Sometimes this resulted in the X server crashing with the following error in the syslog:
 spice-vdagent[2223]: Unable to find a display id for output index 1)
 This script uses the xset preferences utility to set blanking off and disables the DPMS energy features.</description>

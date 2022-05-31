@@ -3,112 +3,112 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://rlmitchell.github.io/categories/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/2022/05/kvm-vm-save-state/</loc>
+    <loc>https://rlmitchell.github.io/2022/05/kvm-vm-save-state/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/kvm/</loc>
+    <loc>https://rlmitchell.github.io/tags/kvm/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/kvm/</loc>
+    <loc>https://rlmitchell.github.io/categories/kvm/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/linux/</loc>
+    <loc>https://rlmitchell.github.io/tags/linux/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/linux/</loc>
+    <loc>https://rlmitchell.github.io/categories/linux/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/posts/</loc>
+    <loc>https://rlmitchell.github.io/posts/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://rlmitchell.github.io/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://rlmitchell.github.io/tags/</loc>
     <lastmod>2022-05-30T19:30:47-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/bash/</loc>
+    <loc>https://rlmitchell.github.io/tags/bash/</loc>
     <lastmod>2022-05-30T18:19:17-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/2022/05/ubuntu-2004-disable-screen-blanking/</loc>
+    <loc>https://rlmitchell.github.io/2022/05/ubuntu-2004-disable-screen-blanking/</loc>
     <lastmod>2022-05-30T18:19:17-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/ubuntu/</loc>
+    <loc>https://rlmitchell.github.io/tags/ubuntu/</loc>
     <lastmod>2022-05-30T18:19:17-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/ubuntu/</loc>
+    <loc>https://rlmitchell.github.io/categories/ubuntu/</loc>
     <lastmod>2022-05-30T18:19:17-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/categories/ubuntu-20.04/</loc>
+    <loc>https://rlmitchell.github.io/categories/ubuntu-20.04/</loc>
     <lastmod>2022-05-30T18:19:17-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/tags/xset/</loc>
+    <loc>https://rlmitchell.github.io/tags/xset/</loc>
     <lastmod>2022-05-30T18:19:17-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://example.com/about/</loc>
+    <loc>https://rlmitchell.github.io/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
