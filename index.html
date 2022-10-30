@@ -138,8 +138,10 @@
     <h3 class="widget-title"> Categories</h3>
     <div class="widget-body">
         <ul class="category-list">
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/aws/" class="category-list-link">aws</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/documentation/" class="category-list-link">documentation</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/markdown/" class="category-list-link">markdown</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">1</span></li>
         </ul>
     </div>
 </div>
@@ -149,7 +151,19 @@
         <ul class="tag-list">
             
             
+            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/aws/" class="tag-list-link">aws</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
             <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/markdown/" class="tag-list-link">markdown</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/ses/" class="tag-list-link">ses</a><span
                     class="tag-list-count">1</span></li>
             
         </ul>
@@ -177,6 +191,46 @@
         <h1 itemprop="name">
   <a
     class="article-title"
+    href="/2022/10/2022.10.30-python-send-email-with-aws-ses/"
+    >Sending email with AWS Simple Email Service (SES) and Python</a
+  >
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">
+        Sending email with AWS Simple Email Service (SES) and Python  The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
+# boto3_credentials.py boto3_credentials = { 'aws_access_key_id':'&lt;YOUR_ACCESS_KEY_ID&gt;', 'aws_secret_access_key':'&lt;YOUR_SECRET_ACCESS_KEY&gt;', 'region_name':'us-east-2' }   Here is our SESEmail class. It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate.
+      </div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://rlmitchell.github.io/2022/10/2022.10.30-python-send-email-with-aws-ses/" class="article-date">
+  <time datetime="2022-10-30 13:50:00 -0500 CDT" itemprop="datePublished">2022-10-30</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/aws/"> aws </a>
+  <a class="article-category-link" href="/categories/python/"> python </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/aws/"> aws </a>
+    <a class="article-tag-link" href="/tags/ses/"> ses </a>
+    <a class="article-tag-link" href="/tags/python/"> python </a>
+  </span>
+
+      </p>
+    </article>
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a
+    class="article-title"
     href="/2022/10/2022.10.29-markdown-comments/"
     >How to write comments in markdown</a
   >
@@ -184,8 +238,8 @@
 
       </div>
       <div class="article-entry text-muted" itemprop="description">
-        How to write comments in markdown I&rsquo;ve been wanting a way to put comments into some of my markdown documents. I came across this solution today. You can use link labels to achieve it.
-Example: [comment]: &lt;&gt; (this is how to make a md comment)
+        How to write comments in markdown This is super simple but, I mention it because I&rsquo;ve been wanting a way to put comments into some of my markdown documents. I came across this solution today and it seems to work well at least in Hugo.
+Using link labels to achieve it: [comment]: &lt;&gt; (this is how to make a md comment)
 reference: stackoverflow post
       </div>
       <p class="article-meta">
