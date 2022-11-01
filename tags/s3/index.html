@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        Sending email with AWS Simple Email Service (SES) and Python - rlmitchell.github.io
-      </title>
+        rlmitchell.github.io</title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -20,36 +19,25 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
-# boto3_credentials.py boto3_credentials = { &#39;aws_access_key_id&#39;:&#39;&amp;lt;YOUR_ACCESS_KEY_ID&amp;gt;&#39;, &#39;aws_secret_access_key&#39;:&#39;&amp;lt;YOUR_SECRET_ACCESS_KEY&amp;gt;&#39;, &#39;region_name&#39;:&#39;us-east-2&#39; }   Here is our SESEmail class. It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate." />
-    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
-    <title>Sending email with AWS Simple Email Service (SES) and Python - rlmitchell.github.io</title>
     
+    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
+    <title>rlmitchell.github.io</title>
+    
+    <link rel="alternate" type="application/rss+xml" href="https://rlmitchell.github.io/tags/s3/index.xml" title="rlmitchell.github.io" />
     
     <link rel="stylesheet" href="https://rlmitchell.github.io/css/style.min.544edf4e480fd84dba4b535b9c42ace7af9a975d149b3f584c0e3a6f120cee55.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="Sending email with AWS Simple Email Service (SES) and Python" />
-<meta property="og:description" content="The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
-# boto3_credentials.py boto3_credentials = { &#39;aws_access_key_id&#39;:&#39;&lt;YOUR_ACCESS_KEY_ID&gt;&#39;, &#39;aws_secret_access_key&#39;:&#39;&lt;YOUR_SECRET_ACCESS_KEY&gt;&#39;, &#39;region_name&#39;:&#39;us-east-2&#39; }   Here is our SESEmail class. It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://rlmitchell.github.io/2022/10/2022.10.30-python-send-email-with-aws-ses/" />
-<meta property="article:published_time" content="2022-10-30T13:50:00-05:00" />
-<meta property="article:modified_time" content="2022-10-30T13:50:00-05:00" />
-<meta itemprop="name" content="Sending email with AWS Simple Email Service (SES) and Python">
-<meta itemprop="description" content="The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
-# boto3_credentials.py boto3_credentials = { &#39;aws_access_key_id&#39;:&#39;&lt;YOUR_ACCESS_KEY_ID&gt;&#39;, &#39;aws_secret_access_key&#39;:&#39;&lt;YOUR_SECRET_ACCESS_KEY&gt;&#39;, &#39;region_name&#39;:&#39;us-east-2&#39; }   Here is our SESEmail class. It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate.">
-<meta itemprop="datePublished" content="2022-10-30T13:50:00-05:00" />
-<meta itemprop="dateModified" content="2022-10-30T13:50:00-05:00" />
-<meta itemprop="wordCount" content="281">
-
-
-
-<meta itemprop="keywords" content="aws,ses,python," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Sending email with AWS Simple Email Service (SES) and Python"/>
-<meta name="twitter:description" content="The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
-# boto3_credentials.py boto3_credentials = { &#39;aws_access_key_id&#39;:&#39;&lt;YOUR_ACCESS_KEY_ID&gt;&#39;, &#39;aws_secret_access_key&#39;:&#39;&lt;YOUR_SECRET_ACCESS_KEY&gt;&#39;, &#39;region_name&#39;:&#39;us-east-2&#39; }   Here is our SESEmail class. It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate."/>
+    <meta property="og:title" content="s3" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://rlmitchell.github.io/tags/s3/" />
+<meta property="og:updated_time" content="2022-10-30T17:14:00-05:00" />
+<meta itemprop="name" content="s3">
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="s3"/>
+<meta name="twitter:description" content=""/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -201,178 +189,45 @@
 
     
     
-<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    <h4 class="toc-title">Catalogue</h4>
-    <nav id="toc" class="js-toc toc">
-
-    </nav>
-  </div>
-</aside>
-<main class="main" role="main"><div class="content">
-  <article id="-" class="article article-type-" itemscope
-    itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2022/10/2022.10.30-python-send-email-with-aws-ses/"
-    >Sending email with AWS Simple Email Service (SES) and Python</a
-  >
-</h1>
-
-      <div class="article-meta">
+<main class="main" role="main">
+    <article class="content article article-tags post-type-list" itemscope="">
+        <header class="article-header">
+            <h1 itemprop="name" class="hidden-xs">s3</h1>
+            <p class="text-muted hidden-xs">Total 7 tags</p>
+            <nav role="navigation" id="nav-main" class="okayNav">
+                <ul>
+                    <li><a href="https://rlmitchell.github.io/tags">All</a></li>
+                    <li><a href="https://rlmitchell.github.io/tags/ansible/">ansible</a></li>
+                    <li><a href="https://rlmitchell.github.io/tags/aws/">aws</a></li>
+                    <li><a href="https://rlmitchell.github.io/tags/bash/">bash</a></li>
+                    <li><a href="https://rlmitchell.github.io/tags/markdown/">markdown</a></li>
+                    <li><a href="https://rlmitchell.github.io/tags/python/">python</a></li>
+                    <li><a href="https://rlmitchell.github.io/tags/s3/">s3</a></li>
+                    <li><a href="https://rlmitchell.github.io/tags/ses/">ses</a></li>
+                </ul>
+            </nav>
+        </header>
         
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://rlmitchell.github.io/2022/10/2022.10.30-python-send-email-with-aws-ses/" class="article-date">
-  <time datetime="2022-10-30 13:50:00 -0500 CDT" itemprop="datePublished">2022-10-30</time>
-</a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/aws/"> aws </a>
-  <a class="article-category-link" href="/categories/python/"> python </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/aws/"> aws </a>
-    <a class="article-tag-link" href="/tags/ses/"> ses </a>
-    <a class="article-tag-link" href="/tags/python/"> python </a>
-  </span>
-
-      </div>
-    </div>
-    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <hr>
-<p>The first thing we need is our AWSCLI credentials.  Having multiple profiles in the AWSCLI credentials file, we need to
-set our credentials when we instantiate the boto3 client.  So we have a simple dict in a file we will import.</p>
-<pre><code class="language-python"># boto3_credentials.py 
-
-boto3_credentials = {
-    'aws_access_key_id':'&lt;YOUR_ACCESS_KEY_ID&gt;',
-    'aws_secret_access_key':'&lt;YOUR_SECRET_ACCESS_KEY&gt;',
-    'region_name':'us-east-2'
-}
-</code></pre>
-<p> </p>
-<p>Here is our SESEmail class.  It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate. To
-send the email we simple call the object.</p>
-<pre><code class="language-python"># ses_email.py 
-
-import boto3
-import subprocess
-from pprint import pprint
-
-
-class SESEmail:
-    def __init__(self, creds, params, debug=False):
-        self.creds = creds
-        self.__dict__.update(params)
-        self.debug = debug
-        self.client = boto3.client(
-            'ses',
-            region_name = self.creds['region_name'],
-            aws_access_key_id = self.creds['aws_access_key_id'],
-            aws_secret_access_key = self.creds['aws_secret_access_key']
-        )
-
-    def __call__(self):
-        response = self.send_email()
-        if self.debug:
-            pprint(self.__dict__)
-            pprint(response)
-
-    def send_email(self):
-        response = self.client.send_email(
-            Destination={'ToAddresses': self.to_address_list },
-            Message={
-                'Body': {
-                    'Text': {
-                        'Charset': 'UTF-8',
-                        'Data': self.body
-                    },
-                },
-                'Subject': {
-                    'Charset': 'UTF-8',
-                    'Data': self.subject
-                },
-            },
-            Source = self.from_address
-        )
-        return response
-</code></pre>
-<p> </p>
-<p>Here is a working example with some information redacted (all caps inside &lt;&gt;)</p>
-<pre><code>$ python3 
-Python 3.8.10 (default, Jun 22 2022, 20:18:18) 
-[GCC 9.4.0] on linux
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; from boto3_credentials import boto3_credentials as creds
-&gt;&gt;&gt; from ses_email import SESEmail 
-&gt;&gt;&gt; params = { 
-...         'from_address':'&lt;FROM@TEST.COM&gt;', 
-...         'to_address_list':['&lt;TO@TEST.COM&gt;'],
-...         'subject':'&lt;SOME SUBJECT STRING&gt;',
-...         'body':'&lt;SOME BODY STRING&gt;'
-... }
-&gt;&gt;&gt; SESEmail(creds, params, debug=True)()
-{'body': '&lt;SOME BODY STRING&gt;',
- 'client': &lt;botocore.client.SES object at 0x7f0a983dec10&gt;,
- 'creds': {'aws_access_key_id': '&lt;YOUR_ACCESS_KEY_ID&gt;',
-           'aws_secret_access_key': '&lt;YOUR_SECRET_ACCESS_KEY&gt;',
-           'region_name': 'us-east-2'},
- 'debug': True,
- 'from_address': '&lt;FROM@TEST.COM&gt;',
- 'subject': '&lt;SOME SUBJECT STRING&gt;',
- 'to_address_list': ['&lt;TO@TEST.COM&gt;']}
-{'MessageId': '010f01842a8bf60a-4ec8b0ad-963e-4add-83d2-2de748d3011a-000000',
- 'ResponseMetadata': {'HTTPHeaders': {'connection': 'keep-alive',
-                                      'content-length': '326',
-                                      'content-type': 'text/xml',
-                                      'date': 'Sun, 30 Oct 2022 20:18:46 GMT',
-                                      'x-amzn-requestid': '088403a4-7754-4c37-87cb-38041f3e5c95'},
-                      'HTTPStatusCode': 200,
-                      'RequestId': '088403a4-7754-4c37-87cb-38041f3e5c95',
-                      'RetryAttempts': 0}}
-&gt;&gt;&gt; quit()
-$ 
-</code></pre>
-
-    </div>
-
-  </article>
-</div><nav class="bar bar-footer clearfix" data-stick-bottom>
-    <div class="bar-inner">
-        <ul class="pager pull-left">
-            <li class="prev">
-                <a href="https://rlmitchell.github.io/2022/10/2022.10.29-markdown-comments/" title="How to write comments in markdown"><i
-                        class="icon icon-angle-left"
-                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="https://rlmitchell.github.io/2022/10/2022.10.30-removing-old-backups-in-s3-with-bash/"
-                    title="Removing old backups in S3 with Bash"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
-            </li>
-            
-            <li class="toggle-toc">
-                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
-                    title="Catalogue" role="button">
-                    <span>[&nbsp;</span><span>Catalogue</span>
-                    <i class="text-collapsed icon icon-anchor"></i>
-                    <i class="text-in icon icon-close"></i>
-                    <span>]</span>
-                </a>
-            </li>
-        </ul>
-        <div class="bar-right">
+        <div class="article-body">
+            <div class="col-md-6"><article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="panel-body">
+        <div class="article-meta">
+            <time datetime="2022-10-30 17:14:00 -0500 CDT"
+                itemprop="datePublished">2022-10-30</time>
         </div>
+        <h3 class="article-title" itemprop="name">
+            <a class="article-link" href="https://rlmitchell.github.io/2022/10/2022.10.30-removing-old-backups-in-s3-with-bash/">Removing old backups in S3 with Bash</a>
+        </h3>
     </div>
-</nav>
-
-
+    <div class="panel-footer">
+        <a href="https://rlmitchell.github.io/tags/aws" class="label label-default mb">aws</a>
+        <a href="https://rlmitchell.github.io/tags/s3" class="label label-default mb">s3</a>
+        <a href="https://rlmitchell.github.io/tags/bash" class="label label-default mb">bash</a>
+    </div>
+</article>
+            </div>
+        </div>
+    </article>
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
     <li><a href="https://github.com/rlmitchell" target="_blank" title="github" data-toggle=tooltip data-placement=top >
@@ -448,7 +303,6 @@ $
         hasInnerContainers: true,
     });
 </script>
-
 
   </body>
 </html>

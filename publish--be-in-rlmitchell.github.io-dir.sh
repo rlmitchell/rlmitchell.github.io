@@ -1,8 +1,1 @@
-#!/bin/bash 
-
-rm -fr *
-cp -a ../hugo-website/public/* .
-git add .
-git commit -m update
-git push 
-
+../publish--be-in-rlmitchell.github.io-dir.sh

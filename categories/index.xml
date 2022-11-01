@@ -5,10 +5,30 @@
     <link>https://rlmitchell.github.io/categories/</link>
     <description>Recent content in Categories on rlmitchell.github.io</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 30 Oct 2022 13:50:00 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 01 Nov 2022 10:11:00 -0500</lastBuildDate>
     
         <atom:link href="https://rlmitchell.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using a list of dictionaries in Ansible</title>
+      <link>https://rlmitchell.github.io/2022/11/2/</link>
+      <pubDate>Tue, 01 Nov 2022 10:11:00 -0500</pubDate>
+      
+      <guid>https://rlmitchell.github.io/2022/11/2/</guid>
+      <description>Sometimes you need more that a simple list. In Ansible you can use a list of dictionaries to give each item in the list more than one attribute.
+ Here is an example playbook that:
+ sets the my_list variable to a list of dictionaries use each of the dictionary attributes in a debug statement  - hosts: localhost become: no gather_facts: no vars: my_list: - id: &#39;id 1&#39; desc: &#39;desc 1&#39; - id: &#39;id 2&#39; desc: &#39;desc 2&#39; tasks: - name: print out dictionary values debug: msg: &amp;quot;{{ item.</description>
+    </item>
+    
+    <item>
+      <title>Removing old backups in S3 with Bash</title>
+      <link>https://rlmitchell.github.io/2022/10/2022.10.30-removing-old-backups-in-s3-with-bash/</link>
+      <pubDate>Sun, 30 Oct 2022 17:14:00 -0500</pubDate>
+      
+      <guid>https://rlmitchell.github.io/2022/10/2022.10.30-removing-old-backups-in-s3-with-bash/</guid>
+      <description>Requirements:  All backup objects in S3 start with a common prefix. All backup objects in S3 have a sortable date/timestamp in the object&amp;rsquo;s name. Keep the most current N backups, delete the rest. Use AWSCLI and Bash so it can be added to cron.   Prerequisites The first thing we need to know how to do is create a sorted array. In this case we need to create the array with the output of another command.</description>
+    </item>
     
     <item>
       <title>Sending email with AWS Simple Email Service (SES) and Python</title>
@@ -16,7 +36,7 @@
       <pubDate>Sun, 30 Oct 2022 13:50:00 -0500</pubDate>
       
       <guid>https://rlmitchell.github.io/2022/10/2022.10.30-python-send-email-with-aws-ses/</guid>
-      <description>Sending email with AWS Simple Email Service (SES) and Python  The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
+      <description>The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
 # boto3_credentials.py boto3_credentials = { &#39;aws_access_key_id&#39;:&#39;&amp;lt;YOUR_ACCESS_KEY_ID&amp;gt;&#39;, &#39;aws_secret_access_key&#39;:&#39;&amp;lt;YOUR_SECRET_ACCESS_KEY&amp;gt;&#39;, &#39;region_name&#39;:&#39;us-east-2&#39; }   Here is our SESEmail class. It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate.</description>
     </item>
     
@@ -26,7 +46,7 @@
       <pubDate>Sat, 29 Oct 2022 20:48:00 -0500</pubDate>
       
       <guid>https://rlmitchell.github.io/2022/10/2022.10.29-markdown-comments/</guid>
-      <description>How to write comments in markdown This is super simple but, I mention it because I&amp;rsquo;ve been wanting a way to put comments into some of my markdown documents. I came across this solution today and it seems to work well at least in Hugo.
+      <description>This is super simple but, I mention it because I&amp;rsquo;ve been wanting a way to put comments into some of my markdown documents. I came across this solution today and it seems to work well at least in Hugo.
 Using link labels to achieve it: [comment]: &amp;lt;&amp;gt; (this is how to make a md comment)
 reference: stackoverflow post</description>
     </item>
