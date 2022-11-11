@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        Removing old backups in S3 with Bash - rlmitchell.github.io
+        Removing old backups in S3 with Bash - robmitchell.info
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,7 +22,7 @@
     
     <meta name="description" content="Requirements:  All backup objects in S3 start with a common prefix. All backup objects in S3 have a sortable date/timestamp in the object&amp;rsquo;s name. Keep the most current N backups, delete the rest. Use AWSCLI and Bash so it can be added to cron.   Prerequisites The first thing we need to know how to do is create a sorted array. In this case we need to create the array with the output of another command." />
     <meta name="generator" content="Hugo 0.68.3 with theme pure" />
-    <title>Removing old backups in S3 with Bash - rlmitchell.github.io</title>
+    <title>Removing old backups in S3 with Bash - robmitchell.info</title>
     
     
     <link rel="stylesheet" href="https://rlmitchell.github.io/css/style.min.544edf4e480fd84dba4b535b9c42ace7af9a975d149b3f584c0e3a6f120cee55.css">
@@ -43,7 +43,7 @@
 
 
 
-<meta itemprop="keywords" content="aws,s3,bash," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Removing old backups in S3 with Bash"/>
 <meta name="twitter:description" content="Requirements:  All backup objects in S3 start with a common prefix. All backup objects in S3 have a sortable date/timestamp in the object&rsquo;s name. Keep the most current N backups, delete the rest. Use AWSCLI and Bash so it can be added to cron.   Prerequisites The first thing we need to know how to do is create a sorted array. In this case we need to create the array with the output of another command."/>
 
@@ -149,9 +149,11 @@
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/ansible/" class="category-list-link">ansible</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/aws/" class="category-list-link">aws</a><span class="category-list-count">2</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/bash/" class="category-list-link">bash</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/documentation/" class="category-list-link">documentation</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/markdown/" class="category-list-link">markdown</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/boto3/" class="category-list-link">boto3</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/markdown/" class="category-list-link">markdown</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/s3/" class="category-list-link">s3</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/ses/" class="category-list-link">ses</a><span class="category-list-count">1</span></li>
         </ul>
     </div>
 </div>
@@ -159,34 +161,6 @@
     <h3 class="widget-title"> Tags</h3>
     <div class="widget-body">
         <ul class="tag-list">
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/ansible/" class="tag-list-link">ansible</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/aws/" class="tag-list-link">aws</a><span
-                    class="tag-list-count">2</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/bash/" class="tag-list-link">bash</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/markdown/" class="tag-list-link">markdown</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/python/" class="tag-list-link">python</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/s3/" class="tag-list-link">s3</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/ses/" class="tag-list-link">ses</a><span
-                    class="tag-list-count">1</span></li>
             
         </ul>
 
@@ -230,13 +204,8 @@
   <i class="icon icon-folder"></i>&nbsp;
   <a class="article-category-link" href="/categories/aws/"> aws </a>
   <a class="article-category-link" href="/categories/bash/"> bash </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/aws/"> aws </a>
-    <a class="article-tag-link" href="/tags/s3/"> s3 </a>
-    <a class="article-tag-link" href="/tags/bash/"> bash </a>
-  </span>
+  <a class="article-category-link" href="/categories/s3/"> s3 </a>
+</span>
 
       </div>
     </div>
@@ -419,7 +388,7 @@ $
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
             </li>
             <li class="next">
-                <a href="https://rlmitchell.github.io/2022/11/2/"
+                <a href="https://rlmitchell.github.io/2022/11/2022.11.01-using-list-of-dicts-ansible/"
                     title="Using a list of dictionaries in Ansible"><span>Newer&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>

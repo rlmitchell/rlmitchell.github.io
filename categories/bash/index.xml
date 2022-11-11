@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bash on rlmitchell.github.io</title>
+    <title>bash on robmitchell.info</title>
     <link>https://rlmitchell.github.io/categories/bash/</link>
-    <description>Recent content in bash on rlmitchell.github.io</description>
+    <description>Recent content in bash on robmitchell.info</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 30 Oct 2022 17:14:00 -0500</lastBuildDate>
     
@@ -11,11 +11,33 @@
     
     
     <item>
+      <title>Listing all services and codes in AWS with Python</title>
+      <link>https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/</link>
+      <pubDate>Fri, 11 Nov 2022 01:48:00 -0500</pubDate>
+      
+      <guid>https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/</guid>
+      <description>Here&amp;rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
+ import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services += response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services += response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   More formally:</description>
+    </item>
+    
+    <item>
+      <title>Blank lines in markdown</title>
+      <link>https://rlmitchell.github.io/2022/11/2022.11.11-markdown-blank-lines/</link>
+      <pubDate>Fri, 11 Nov 2022 00:48:00 -0500</pubDate>
+      
+      <guid>https://rlmitchell.github.io/2022/11/2022.11.11-markdown-blank-lines/</guid>
+      <description> To leave a blank line in markdown simply leave a blank line followed by a line with only &amp;amp;nbsp; html spacing then followed by another blank line.
+ Works in AWS CodeCommit markdown and Hugo markdown.
+ Example:
+Some text here &amp;amp;nbsp; Some more text here  </description>
+    </item>
+    
+    <item>
       <title>Using a list of dictionaries in Ansible</title>
-      <link>https://rlmitchell.github.io/2022/11/2/</link>
+      <link>https://rlmitchell.github.io/2022/11/2022.11.01-using-list-of-dicts-ansible/</link>
       <pubDate>Tue, 01 Nov 2022 10:11:00 -0500</pubDate>
       
-      <guid>https://rlmitchell.github.io/2022/11/2/</guid>
+      <guid>https://rlmitchell.github.io/2022/11/2022.11.01-using-list-of-dicts-ansible/</guid>
       <description>Sometimes you need more that a simple list. In Ansible you can use a list of dictionaries to give each item in the list more than one attribute.
  Here is an example playbook that:
  sets the my_list variable to a list of dictionaries use each of the dictionary attributes in a debug statement  - hosts: localhost become: no gather_facts: no vars: my_list: - id: &#39;id 1&#39; desc: &#39;desc 1&#39; - id: &#39;id 2&#39; desc: &#39;desc 2&#39; tasks: - name: print out dictionary values debug: msg: &amp;quot;{{ item.</description>

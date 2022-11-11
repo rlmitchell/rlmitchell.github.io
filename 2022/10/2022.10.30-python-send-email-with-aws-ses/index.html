@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        Sending email with AWS Simple Email Service (SES) and Python - rlmitchell.github.io
+        Sending email with AWS Simple Email Service (SES) and Python - robmitchell.info
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -23,7 +23,7 @@
     <meta name="description" content="The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
 # boto3_credentials.py boto3_credentials = { &#39;aws_access_key_id&#39;:&#39;&amp;lt;YOUR_ACCESS_KEY_ID&amp;gt;&#39;, &#39;aws_secret_access_key&#39;:&#39;&amp;lt;YOUR_SECRET_ACCESS_KEY&amp;gt;&#39;, &#39;region_name&#39;:&#39;us-east-2&#39; }   Here is our SESEmail class. It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate." />
     <meta name="generator" content="Hugo 0.68.3 with theme pure" />
-    <title>Sending email with AWS Simple Email Service (SES) and Python - rlmitchell.github.io</title>
+    <title>Sending email with AWS Simple Email Service (SES) and Python - robmitchell.info</title>
     
     
     <link rel="stylesheet" href="https://rlmitchell.github.io/css/style.min.544edf4e480fd84dba4b535b9c42ace7af9a975d149b3f584c0e3a6f120cee55.css">
@@ -46,7 +46,7 @@
 
 
 
-<meta itemprop="keywords" content="aws,ses,python," /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Sending email with AWS Simple Email Service (SES) and Python"/>
 <meta name="twitter:description" content="The first thing we need is our AWSCLI credentials. Having multiple profiles in the AWSCLI credentials file, we need to set our credentials when we instantiate the boto3 client. So we have a simple dict in a file we will import.
 # boto3_credentials.py boto3_credentials = { &#39;aws_access_key_id&#39;:&#39;&lt;YOUR_ACCESS_KEY_ID&gt;&#39;, &#39;aws_secret_access_key&#39;:&#39;&lt;YOUR_SECRET_ACCESS_KEY&gt;&#39;, &#39;region_name&#39;:&#39;us-east-2&#39; }   Here is our SESEmail class. It takes a credentials dict, a paramaters dict, and a debug boolean to instantiate."/>
@@ -153,9 +153,11 @@
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/ansible/" class="category-list-link">ansible</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/aws/" class="category-list-link">aws</a><span class="category-list-count">2</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/bash/" class="category-list-link">bash</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/documentation/" class="category-list-link">documentation</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/markdown/" class="category-list-link">markdown</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/boto3/" class="category-list-link">boto3</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/markdown/" class="category-list-link">markdown</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/s3/" class="category-list-link">s3</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/ses/" class="category-list-link">ses</a><span class="category-list-count">1</span></li>
         </ul>
     </div>
 </div>
@@ -163,34 +165,6 @@
     <h3 class="widget-title"> Tags</h3>
     <div class="widget-body">
         <ul class="tag-list">
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/ansible/" class="tag-list-link">ansible</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/aws/" class="tag-list-link">aws</a><span
-                    class="tag-list-count">2</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/bash/" class="tag-list-link">bash</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/markdown/" class="tag-list-link">markdown</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/python/" class="tag-list-link">python</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/s3/" class="tag-list-link">s3</a><span
-                    class="tag-list-count">1</span></li>
-            
-            
-            <li class="tag-list-item"><a href="https://rlmitchell.github.io/tags/ses/" class="tag-list-link">ses</a><span
-                    class="tag-list-count">1</span></li>
             
         </ul>
 
@@ -233,14 +207,10 @@
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
   <a class="article-category-link" href="/categories/aws/"> aws </a>
+  <a class="article-category-link" href="/categories/ses/"> ses </a>
   <a class="article-category-link" href="/categories/python/"> python </a>
-</span>  
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>&nbsp;
-    <a class="article-tag-link" href="/tags/aws/"> aws </a>
-    <a class="article-tag-link" href="/tags/ses/"> ses </a>
-    <a class="article-tag-link" href="/tags/python/"> python </a>
-  </span>
+  <a class="article-category-link" href="/categories/boto3/"> boto3 </a>
+</span>
 
       </div>
     </div>
