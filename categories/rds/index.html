@@ -2,8 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        Using a list of dictionaries in Ansible - robmitchell.info
-      </title>
+        robmitchell.info</title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -20,40 +19,25 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Sometimes you need more that a simple list. In Ansible you can use a list of dictionaries to give each item in the list more than one attribute.
- Here is an example playbook that:
- sets the my_list variable to a list of dictionaries use each of the dictionary attributes in a debug statement  - hosts: localhost become: no gather_facts: no vars: my_list: - id: &#39;id 1&#39; desc: &#39;desc 1&#39; - id: &#39;id 2&#39; desc: &#39;desc 2&#39; tasks: - name: print out dictionary values debug: msg: &amp;quot;{{ item." />
-    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
-    <title>Using a list of dictionaries in Ansible - robmitchell.info</title>
     
+    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
+    <title>robmitchell.info</title>
+    
+    <link rel="alternate" type="application/rss+xml" href="https://rlmitchell.github.io/categories/rds/index.xml" title="robmitchell.info" />
     
     <link rel="stylesheet" href="https://rlmitchell.github.io/css/style.min.544edf4e480fd84dba4b535b9c42ace7af9a975d149b3f584c0e3a6f120cee55.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="Using a list of dictionaries in Ansible" />
-<meta property="og:description" content="Sometimes you need more that a simple list. In Ansible you can use a list of dictionaries to give each item in the list more than one attribute.
- Here is an example playbook that:
- sets the my_list variable to a list of dictionaries use each of the dictionary attributes in a debug statement  - hosts: localhost become: no gather_facts: no vars: my_list: - id: &#39;id 1&#39; desc: &#39;desc 1&#39; - id: &#39;id 2&#39; desc: &#39;desc 2&#39; tasks: - name: print out dictionary values debug: msg: &quot;{{ item." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://rlmitchell.github.io/2022/11/2022.11.01-using-list-of-dicts-ansible/" />
-<meta property="article:published_time" content="2022-11-01T10:11:00-05:00" />
-<meta property="article:modified_time" content="2022-11-01T10:11:00-05:00" />
-<meta itemprop="name" content="Using a list of dictionaries in Ansible">
-<meta itemprop="description" content="Sometimes you need more that a simple list. In Ansible you can use a list of dictionaries to give each item in the list more than one attribute.
- Here is an example playbook that:
- sets the my_list variable to a list of dictionaries use each of the dictionary attributes in a debug statement  - hosts: localhost become: no gather_facts: no vars: my_list: - id: &#39;id 1&#39; desc: &#39;desc 1&#39; - id: &#39;id 2&#39; desc: &#39;desc 2&#39; tasks: - name: print out dictionary values debug: msg: &quot;{{ item.">
-<meta itemprop="datePublished" content="2022-11-01T10:11:00-05:00" />
-<meta itemprop="dateModified" content="2022-11-01T10:11:00-05:00" />
-<meta itemprop="wordCount" content="165">
-
-
-
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Using a list of dictionaries in Ansible"/>
-<meta name="twitter:description" content="Sometimes you need more that a simple list. In Ansible you can use a list of dictionaries to give each item in the list more than one attribute.
- Here is an example playbook that:
- sets the my_list variable to a list of dictionaries use each of the dictionary attributes in a debug statement  - hosts: localhost become: no gather_facts: no vars: my_list: - id: &#39;id 1&#39; desc: &#39;desc 1&#39; - id: &#39;id 2&#39; desc: &#39;desc 2&#39; tasks: - name: print out dictionary values debug: msg: &quot;{{ item."/>
+    <meta property="og:title" content="rds" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://rlmitchell.github.io/categories/rds/" />
+<meta property="og:updated_time" content="2022-11-11T03:48:00-05:00" />
+<meta itemprop="name" content="rds">
+<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="rds"/>
+<meta name="twitter:description" content=""/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -171,121 +155,50 @@
 
     
     
-<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
-  <div class="slimContent">
-    <h4 class="toc-title">Catalogue</h4>
-    <nav id="toc" class="js-toc toc">
-
-    </nav>
-  </div>
-</aside>
-<main class="main" role="main"><div class="content">
-  <article id="-" class="article article-type-" itemscope
-    itemtype="http://schema.org/BlogPosting">
-    
-    <div class="article-header">
-      <h1 itemprop="name">
-  <a
-    class="article-title"
-    href="/2022/11/2022.11.01-using-list-of-dicts-ansible/"
-    >Using a list of dictionaries in Ansible</a
-  >
-</h1>
-
-      <div class="article-meta">
+<main class="main" role="main">
+    <article class="article article-categories article-type-list" itemscope="">
+        <header class="article-header">
+            <h1 itemprop="name" class="hidden-xs">rds</h1>
+            <p class="text-muted hidden-xs">Total 9 categories</p>
+            <nav role="navigation" id="nav-main" class="okayNav">
+                <ul>
+                    <li><a href="/categories/">All</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/ansible/">ansible</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/aws/">aws</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/bash/">bash</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/boto3/">boto3</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/markdown/">markdown</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/python/">python</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/rds/">rds</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/s3/">s3</a></li>
+                    <li><a href="https://rlmitchell.github.io/categories/ses/">ses</a></li>
+                </ul>
+            </nav>
+        </header>
         
-<span class="article-date">
-  <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://rlmitchell.github.io/2022/11/2022.11.01-using-list-of-dicts-ansible/" class="article-date">
-  <time datetime="2022-11-01 10:11:00 -0500 CDT" itemprop="datePublished">2022-11-01</time>
+        <div class="article-body">
+            <div class="panel panel-default b-no">
+                <div class="panel-heading" role="tab">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#collapse1d374ed2a6bcf601d7bfd4fc3dfd3b5d" aria-expanded="true">
+                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>rds
+                        </a>
+                        <small class="text-muted">(Total1 articles)</small>
+                    </h4>
+                </div>
+                <div id="collapse1d374ed2a6bcf601d7bfd4fc3dfd3b5d" class="panel-collapse collapse in" role="tabpanel"
+                    aria-labelledby="heading1d374ed2a6bcf601d7bfd4fc3dfd3b5d">
+                    <div class="panel-body">
+                        <div class="collection"><a href="https://rlmitchell.github.io/2022/11/2022.11.11-purge-old-rds-manual-snapshots-with-boto3/" class="collection-item" itemprop="url" target="_blank">
+    <time datetime="2022-11-11 03:48:00 -0500 -0500" itemprop="datePublished" style="margin-right: 5px;">2022-11-11
+    </time>Purging old manual snapshots in AWS RDS with Python
 </a>
-</span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/ansible/"> ansible </a>
-</span>
-
-      </div>
-    </div>
-    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <hr>
-<p>Sometimes you need more that a simple list.  In Ansible you can use a list of dictionaries to give each item in
-the list more than one attribute.</p>
-<p> </p>
-<p>Here is an example playbook that:</p>
-<ul>
-<li>sets the my_list variable to a list of dictionaries</li>
-<li>use each of the dictionary attributes in a debug statement</li>
-</ul>
-<pre><code class="language-yaml">- hosts: localhost
-  become: no
-  gather_facts: no
-  vars:
-    my_list:
-      - id: 'id 1'
-        desc: 'desc 1'
-      - id: 'id 2'
-        desc: 'desc 2' 
-  tasks:
-    - name: print out dictionary values
-      debug:
-        msg: &quot;{{ item.id }}, {{ item.desc }}&quot;
-      with_items: &quot;{{ my_list }}&quot;
-</code></pre>
-<p> </p>
-<p>Here&rsquo;s the output of the playbook run:</p>
-<pre><code class="language-bash">$ ansible-playbook using-list-of-dicts.yml
-
-PLAY [localhost] ****************************************************************************************************
-
-TASK [debug] ********************************************************************************************************
-ok: [localhost] =&gt; (item={'id': 'id 1', 'desc': 'desc 1'}) =&gt; {
-    &quot;msg&quot;: &quot;id 1, desc 1&quot;
-}
-ok: [localhost] =&gt; (item={'id': 'id 2', 'desc': 'desc 2'}) =&gt; {
-    &quot;msg&quot;: &quot;id 2, desc 2&quot;
-}
-
-PLAY RECAP **********************************************************************************************************
-localhost                  : ok=1    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
-$
-</code></pre>
-<p> </p>
-<p>The example <a href="https://github.com/rlmitchell/ansible-examples/blob/develop/playbooks/using-list-of-dicts.yml">playbook</a> is also on github.</p>
-
-    </div>
-
-  </article>
-</div><nav class="bar bar-footer clearfix" data-stick-bottom>
-    <div class="bar-inner">
-        <ul class="pager pull-left">
-            <li class="prev">
-                <a href="https://rlmitchell.github.io/2022/10/2022.10.30-removing-old-backups-in-s3-with-bash/" title="Removing old backups in S3 with Bash"><i
-                        class="icon icon-angle-left"
-                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="https://rlmitchell.github.io/2022/11/2022.11.11-markdown-blank-lines/"
-                    title="Blank lines in markdown"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
-            </li>
-            
-            <li class="toggle-toc">
-                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
-                    title="Catalogue" role="button">
-                    <span>[&nbsp;</span><span>Catalogue</span>
-                    <i class="text-collapsed icon icon-anchor"></i>
-                    <i class="text-in icon icon-close"></i>
-                    <span>]</span>
-                </a>
-            </li>
-        </ul>
-        <div class="bar-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</nav>
-
-
+    </article>
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
 </ul>
@@ -357,7 +270,6 @@ $
         hasInnerContainers: true,
     });
 </script>
-
 
   </body>
 </html>

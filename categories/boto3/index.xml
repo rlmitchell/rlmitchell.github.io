@@ -5,10 +5,19 @@
     <link>https://rlmitchell.github.io/categories/boto3/</link>
     <description>Recent content in boto3 on robmitchell.info</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 11 Nov 2022 02:48:00 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 11 Nov 2022 03:48:00 -0500</lastBuildDate>
     
         <atom:link href="https://rlmitchell.github.io/categories/boto3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Purging old manual snapshots in AWS RDS with Python</title>
+      <link>https://rlmitchell.github.io/2022/11/2022.11.11-purge-old-rds-manual-snapshots-with-boto3/</link>
+      <pubDate>Fri, 11 Nov 2022 03:48:00 -0500</pubDate>
+      
+      <guid>https://rlmitchell.github.io/2022/11/2022.11.11-purge-old-rds-manual-snapshots-with-boto3/</guid>
+      <description>import boto3 from pprint import pprint class AWSRDSManualSnapshotPurger: def __init__(self, DBIdentifier, access_key=None, secret_key=None): if not access_key: self.client = boto3.client(&#39;rds&#39;) else: self.client = boto3.client(&#39;rds&#39;, region_name = &#39;us-east-1&#39;, aws_access_key_id = access_key, aws_secret_access_key = secret_key) self.db_identifier = DBIdentifier self.number_to_keep = 3 self.manual_snapshots_list = self.get_snapshots_list() def get_snapshots_list(self): manual_snapshots = [] for snapshot in self.client.describe_db_snapshots(SnapshotType=&#39;manual&#39;,DBInstanceIdentifier=self.db_identifier).get(&#39;DBSnapshots&#39;, None): manual_snapshots.append( (snapshot[&#39;SnapshotCreateTime&#39;], snapshot[&#39;DBSnapshotIdentifier&#39;]) ) manual_snapshots.sort() return manual_snapshots def purge_snapshots(self): while len(self.manual_snapshots_list) &amp;gt; self.number_to_keep: del_snapshot = self.manual_snapshots_list.pop(0) print(&#39;delete: &#39; + str(del_snapshot)) #self.</description>
+    </item>
     
     <item>
       <title>Getting send quota in AWS SES with Python</title>

@@ -3,15 +3,50 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rlmitchell.github.io/categories/aws/</loc>
+    <lastmod>2022-11-11T03:48:00-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://rlmitchell.github.io/categories/boto3/</loc>
-    <lastmod>2022-11-11T02:48:00-05:00</lastmod>
+    <lastmod>2022-11-11T03:48:00-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://rlmitchell.github.io/categories/</loc>
-    <lastmod>2022-11-11T02:48:00-05:00</lastmod>
+    <lastmod>2022-11-11T03:48:00-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://rlmitchell.github.io/posts/</loc>
+    <lastmod>2022-11-11T03:48:00-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://rlmitchell.github.io/2022/11/2022.11.11-purge-old-rds-manual-snapshots-with-boto3/</loc>
+    <lastmod>2022-11-11T03:48:00-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://rlmitchell.github.io/categories/python/</loc>
+    <lastmod>2022-11-11T03:48:00-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://rlmitchell.github.io/categories/rds/</loc>
+    <lastmod>2022-11-11T03:48:00-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -24,29 +59,8 @@
   </url>
   
   <url>
-    <loc>https://rlmitchell.github.io/posts/</loc>
-    <lastmod>2022-11-11T02:48:00-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://rlmitchell.github.io/categories/python/</loc>
-    <lastmod>2022-11-11T02:48:00-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://rlmitchell.github.io/categories/ses/</loc>
     <lastmod>2022-11-11T02:48:00-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://rlmitchell.github.io/categories/aws/</loc>
-    <lastmod>2022-11-11T01:48:00-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
