@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>Getting send quota in AWS SES with Python</title>
+      <link>https://rlmitchell.github.io/2022/11/2022.11.11-aws-ses-get-quota/</link>
+      <pubDate>Fri, 11 Nov 2022 02:48:00 -0500</pubDate>
+      
+      <guid>https://rlmitchell.github.io/2022/11/2022.11.11-aws-ses-get-quota/</guid>
+      <description>Getting send quota with Python import boto3 from pprint import pprint class AWSSESQuota: def __init__(self, access_key=None, secret_key=None): self.threshold = 5000 if not access_key: self.client = boto3.client(&#39;ses&#39;) else: self.client = boto3.client(&#39;ses&#39;, region_name = &#39;us-east-1&#39;, aws_access_key_id = access_key, aws_secret_access_key = secret_key) def get_sent(self): return self.client.get_send_quota()[&#39;SentLast24Hours&#39;] def over_threshold(self): return int(self.get_sent()) &amp;gt; self.threshold if __name__ == &#39;__main__&#39;: quota = AWSSESQuota() pprint(quota.get_sent()) pprint(quota.over_threshold())   Example output:
+$ python3 quota-example.py 482.0 False $   Getting send quota with AWSCLI $ aws ses get-send-quota --region us-east-1 { &amp;quot;Max24HourSend&amp;quot;: 50000.</description>
+    </item>
+    
+    <item>
       <title>Listing all services and codes in AWS with Python</title>
       <link>https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/</link>
       <pubDate>Fri, 11 Nov 2022 01:48:00 -0500</pubDate>
@@ -79,7 +89,7 @@ reference: stackoverflow post</description>
       <pubDate>Mon, 30 May 2022 21:34:45 -0500</pubDate>
       
       <guid>https://rlmitchell.github.io/about/</guid>
-      <description></description>
+      <description> Bookmarks  hugo hugo-pure-theme  </description>
     </item>
     
   </channel>

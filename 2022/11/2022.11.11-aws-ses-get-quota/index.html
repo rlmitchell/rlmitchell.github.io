@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <title>
-        robmitchell.info</title>
+        Getting send quota in AWS SES with Python - robmitchell.info
+      </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -19,25 +20,36 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    
+    <meta name="description" content="Getting send quota with Python import boto3 from pprint import pprint class AWSSESQuota: def __init__(self, access_key=None, secret_key=None): self.threshold = 5000 if not access_key: self.client = boto3.client(&#39;ses&#39;) else: self.client = boto3.client(&#39;ses&#39;, region_name = &#39;us-east-1&#39;, aws_access_key_id = access_key, aws_secret_access_key = secret_key) def get_sent(self): return self.client.get_send_quota()[&#39;SentLast24Hours&#39;] def over_threshold(self): return int(self.get_sent()) &amp;gt; self.threshold if __name__ == &#39;__main__&#39;: quota = AWSSESQuota() pprint(quota.get_sent()) pprint(quota.over_threshold())   Example output:
+$ python3 quota-example.py 482.0 False $   Getting send quota with AWSCLI $ aws ses get-send-quota --region us-east-1 { &amp;quot;Max24HourSend&amp;quot;: 50000." />
     <meta name="generator" content="Hugo 0.68.3 with theme pure" />
-    <title>robmitchell.info</title>
+    <title>Getting send quota in AWS SES with Python - robmitchell.info</title>
     
-    <link rel="alternate" type="application/rss+xml" href="https://rlmitchell.github.io/categories/aws/index.xml" title="robmitchell.info" />
     
     <link rel="stylesheet" href="https://rlmitchell.github.io/css/style.min.544edf4e480fd84dba4b535b9c42ace7af9a975d149b3f584c0e3a6f120cee55.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="aws" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://rlmitchell.github.io/categories/aws/" />
-<meta property="og:updated_time" content="2022-11-11T01:48:00-05:00" />
-<meta itemprop="name" content="aws">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="aws"/>
-<meta name="twitter:description" content=""/>
+    <meta property="og:title" content="Getting send quota in AWS SES with Python" />
+<meta property="og:description" content="Getting send quota with Python import boto3 from pprint import pprint class AWSSESQuota: def __init__(self, access_key=None, secret_key=None): self.threshold = 5000 if not access_key: self.client = boto3.client(&#39;ses&#39;) else: self.client = boto3.client(&#39;ses&#39;, region_name = &#39;us-east-1&#39;, aws_access_key_id = access_key, aws_secret_access_key = secret_key) def get_sent(self): return self.client.get_send_quota()[&#39;SentLast24Hours&#39;] def over_threshold(self): return int(self.get_sent()) &gt; self.threshold if __name__ == &#39;__main__&#39;: quota = AWSSESQuota() pprint(quota.get_sent()) pprint(quota.over_threshold())   Example output:
+$ python3 quota-example.py 482.0 False $   Getting send quota with AWSCLI $ aws ses get-send-quota --region us-east-1 { &quot;Max24HourSend&quot;: 50000." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://rlmitchell.github.io/2022/11/2022.11.11-aws-ses-get-quota/" />
+<meta property="article:published_time" content="2022-11-11T02:48:00-05:00" />
+<meta property="article:modified_time" content="2022-11-11T02:48:00-05:00" />
+<meta itemprop="name" content="Getting send quota in AWS SES with Python">
+<meta itemprop="description" content="Getting send quota with Python import boto3 from pprint import pprint class AWSSESQuota: def __init__(self, access_key=None, secret_key=None): self.threshold = 5000 if not access_key: self.client = boto3.client(&#39;ses&#39;) else: self.client = boto3.client(&#39;ses&#39;, region_name = &#39;us-east-1&#39;, aws_access_key_id = access_key, aws_secret_access_key = secret_key) def get_sent(self): return self.client.get_send_quota()[&#39;SentLast24Hours&#39;] def over_threshold(self): return int(self.get_sent()) &gt; self.threshold if __name__ == &#39;__main__&#39;: quota = AWSSESQuota() pprint(quota.get_sent()) pprint(quota.over_threshold())   Example output:
+$ python3 quota-example.py 482.0 False $   Getting send quota with AWSCLI $ aws ses get-send-quota --region us-east-1 { &quot;Max24HourSend&quot;: 50000.">
+<meta itemprop="datePublished" content="2022-11-11T02:48:00-05:00" />
+<meta itemprop="dateModified" content="2022-11-11T02:48:00-05:00" />
+<meta itemprop="wordCount" content="119">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Getting send quota in AWS SES with Python"/>
+<meta name="twitter:description" content="Getting send quota with Python import boto3 from pprint import pprint class AWSSESQuota: def __init__(self, access_key=None, secret_key=None): self.threshold = 5000 if not access_key: self.client = boto3.client(&#39;ses&#39;) else: self.client = boto3.client(&#39;ses&#39;, region_name = &#39;us-east-1&#39;, aws_access_key_id = access_key, aws_secret_access_key = secret_key) def get_sent(self): return self.client.get_send_quota()[&#39;SentLast24Hours&#39;] def over_threshold(self): return int(self.get_sent()) &gt; self.threshold if __name__ == &#39;__main__&#39;: quota = AWSSESQuota() pprint(quota.get_sent()) pprint(quota.over_threshold())   Example output:
+$ python3 quota-example.py 482.0 False $   Getting send quota with AWSCLI $ aws ses get-send-quota --region us-east-1 { &quot;Max24HourSend&quot;: 50000."/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -154,55 +166,139 @@
 
     
     
-<main class="main" role="main">
-    <article class="article article-categories article-type-list" itemscope="">
-        <header class="article-header">
-            <h1 itemprop="name" class="hidden-xs">aws</h1>
-            <p class="text-muted hidden-xs">Total 8 categories</p>
-            <nav role="navigation" id="nav-main" class="okayNav">
-                <ul>
-                    <li><a href="/categories/">All</a></li>
-                    <li><a href="https://rlmitchell.github.io/categories/ansible/">ansible</a></li>
-                    <li><a href="https://rlmitchell.github.io/categories/aws/">aws</a></li>
-                    <li><a href="https://rlmitchell.github.io/categories/bash/">bash</a></li>
-                    <li><a href="https://rlmitchell.github.io/categories/boto3/">boto3</a></li>
-                    <li><a href="https://rlmitchell.github.io/categories/markdown/">markdown</a></li>
-                    <li><a href="https://rlmitchell.github.io/categories/python/">python</a></li>
-                    <li><a href="https://rlmitchell.github.io/categories/s3/">s3</a></li>
-                    <li><a href="https://rlmitchell.github.io/categories/ses/">ses</a></li>
-                </ul>
-            </nav>
-        </header>
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2022/11/2022.11.11-aws-ses-get-quota/"
+    >Getting send quota in AWS SES with Python</a
+  >
+</h1>
+
+      <div class="article-meta">
         
-        <div class="article-body">
-            <div class="panel panel-default b-no">
-                <div class="panel-heading" role="tab">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" href="#collapseac68bbf921d953d1cfab916cb6120864" aria-expanded="true">
-                            <i class="icon icon-folder text-active"></i><i class="icon icon-folder-open text"></i>aws
-                        </a>
-                        <small class="text-muted">(Total3 articles)</small>
-                    </h4>
-                </div>
-                <div id="collapseac68bbf921d953d1cfab916cb6120864" class="panel-collapse collapse in" role="tabpanel"
-                    aria-labelledby="headingac68bbf921d953d1cfab916cb6120864">
-                    <div class="panel-body">
-                        <div class="collection"><a href="https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2022-11-11 01:48:00 -0500 -0500" itemprop="datePublished" style="margin-right: 5px;">2022-11-11
-    </time>Listing all services and codes in AWS with Python
-</a><a href="https://rlmitchell.github.io/2022/10/2022.10.30-removing-old-backups-in-s3-with-bash/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2022-10-30 17:14:00 -0500 CDT" itemprop="datePublished" style="margin-right: 5px;">2022-10-30
-    </time>Removing old backups in S3 with Bash
-</a><a href="https://rlmitchell.github.io/2022/10/2022.10.30-python-send-email-with-aws-ses/" class="collection-item" itemprop="url" target="_blank">
-    <time datetime="2022-10-30 13:50:00 -0500 CDT" itemprop="datePublished" style="margin-right: 5px;">2022-10-30
-    </time>Sending email with AWS Simple Email Service (SES) and Python
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://rlmitchell.github.io/2022/11/2022.11.11-aws-ses-get-quota/" class="article-date">
+  <time datetime="2022-11-11 02:48:00 -0500 -0500" itemprop="datePublished">2022-11-11</time>
 </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/boto3/"> boto3 </a>
+  <a class="article-category-link" href="/categories/python/"> python </a>
+  <a class="article-category-link" href="/categories/ses/"> ses </a>
+</span>
+
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <hr>
+<h4 id="getting-send-quota-with-python">Getting send quota with Python</h4>
+<pre><code class="language-python">import boto3
+from pprint import pprint
+
+class AWSSESQuota:
+    def __init__(self, access_key=None, secret_key=None):
+        self.threshold = 5000
+        if not access_key:
+            self.client = boto3.client('ses')
+        else:
+            self.client = boto3.client('ses',
+                                       region_name = 'us-east-1',
+                                       aws_access_key_id = access_key,
+                                       aws_secret_access_key = secret_key)
+
+    def get_sent(self):
+        return self.client.get_send_quota()['SentLast24Hours']
+
+    def over_threshold(self):
+        return int(self.get_sent()) &gt; self.threshold
+
+
+if __name__ == '__main__':
+    quota = AWSSESQuota()
+    pprint(quota.get_sent())
+    pprint(quota.over_threshold())
+
+</code></pre>
+<p> </p>
+<p>Example output:</p>
+<pre><code class="language-bash">$ python3 quota-example.py
+482.0
+False
+$ 
+</code></pre>
+<p> </p>
+<h4 id="getting-send-quota-with-awscli">Getting send quota with AWSCLI</h4>
+<pre><code class="language-bash">$ aws ses get-send-quota --region us-east-1
+{
+    &quot;Max24HourSend&quot;: 50000.0,
+    &quot;MaxSendRate&quot;: 14.0,
+    &quot;SentLast24Hours&quot;: 15.0
+}
+$ 
+</code></pre>
+<p> </p>
+<h4 id="using-unittest-to-testcheck-ses-usage-threshold">Using unittest to test/check SES usage threshold</h4>
+<pre><code class="language-python">from quota-example import AWSSESQuota
+import unittest
+
+class Test_SESQuotaThreshold(unittest.TestCase):
+    def test_ses_usage(self):
+        self.assertFalse(AWSSESQuota().over_threshold())
+</code></pre>
+<p> </p>
+<p>Output:</p>
+<pre><code class="language-bash">$ python3 -m unittest test_ses_quota_threshold.py 
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.238s
+
+OK
+$ 
+</code></pre>
+
+    </div>
+
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/" title="Listing all services and codes in AWS with Python"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        <div class="bar-right">
         </div>
-    </article>
+    </div>
+</nav>
+
+
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
 </ul>
@@ -274,6 +370,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>

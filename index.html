@@ -102,12 +102,6 @@
                   <span class="menu-title">Home</span>
                 </a>
             </li>
-            <li class="menu-item menu-item-archives">
-                <a href="/posts/">
-                    <i class="icon icon-archives-fill"></i>
-                  <span class="menu-title">Archives</span>
-                </a>
-            </li>
             <li class="menu-item menu-item-categories">
                 <a href="/categories/">
                     <i class="icon icon-folder"></i>
@@ -118,6 +112,12 @@
                 <a href="/tags/">
                     <i class="icon icon-tags"></i>
                   <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
                 </a>
             </li>
             <li class="menu-item menu-item-about">
@@ -139,23 +139,14 @@
     <div class="widget-body">
         <ul class="category-list">
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/ansible/" class="category-list-link">ansible</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/aws/" class="category-list-link">aws</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/aws/" class="category-list-link">aws</a><span class="category-list-count">3</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/bash/" class="category-list-link">bash</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/boto3/" class="category-list-link">boto3</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/boto3/" class="category-list-link">boto3</a><span class="category-list-count">3</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/markdown/" class="category-list-link">markdown</a><span class="category-list-count">2</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/python/" class="category-list-link">python</a><span class="category-list-count">3</span></li>
             <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/s3/" class="category-list-link">s3</a><span class="category-list-count">1</span></li>
-            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/ses/" class="category-list-link">ses</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://rlmitchell.github.io/categories/ses/" class="category-list-link">ses</a><span class="category-list-count">2</span></li>
         </ul>
-    </div>
-</div>
-      <div class="widget">
-    <h3 class="widget-title"> Tags</h3>
-    <div class="widget-body">
-        <ul class="tag-list">
-            
-        </ul>
-
     </div>
 </div>
   </div>
@@ -170,6 +161,41 @@
     
     
     
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2022/11/2022.11.11-aws-ses-get-quota/"
+    >Getting send quota in AWS SES with Python</a
+  >
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">
+        Getting send quota with Python import boto3 from pprint import pprint class AWSSESQuota: def __init__(self, access_key=None, secret_key=None): self.threshold = 5000 if not access_key: self.client = boto3.client('ses') else: self.client = boto3.client('ses', region_name = 'us-east-1', aws_access_key_id = access_key, aws_secret_access_key = secret_key) def get_sent(self): return self.client.get_send_quota()['SentLast24Hours'] def over_threshold(self): return int(self.get_sent()) &gt; self.threshold if __name__ == '__main__': quota = AWSSESQuota() pprint(quota.get_sent()) pprint(quota.over_threshold())   Example output:
+$ python3 quota-example.py 482.0 False $   Getting send quota with AWSCLI $ aws ses get-send-quota --region us-east-1 { &quot;Max24HourSend&quot;: 50000.
+      </div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://rlmitchell.github.io/2022/11/2022.11.11-aws-ses-get-quota/" class="">
+  <time datetime="2022-11-11 02:48:00 -0500 -0500" itemprop="datePublished">2022-11-11</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/boto3/"> boto3 </a>
+  <a class="article-category-link" href="/categories/python/"> python </a>
+  <a class="article-category-link" href="/categories/ses/"> ses </a>
+</span>
+
+      </p>
+    </article>
     <article
       class="article article-type-page"
       itemscope
@@ -200,6 +226,7 @@
   <i class="icon icon-folder"></i>&nbsp;
   <a class="article-category-link" href="/categories/boto3/"> boto3 </a>
   <a class="article-category-link" href="/categories/python/"> python </a>
+  <a class="article-category-link" href="/categories/aws/"> aws </a>
 </span>
 
       </p>
@@ -390,10 +417,6 @@ reference: stackoverflow post
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
 <ul class="social-links">
-    <li><a href="https://github.com/rlmitchell" target="_blank" title="github" data-toggle=tooltip data-placement=top >
-            <i class="icon icon-github"></i></a></li>
-    <li><a href="https://rlmitchell.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
-            <i class="icon icon-rss"></i></a></li>
 </ul>
   <div class="copyright">
     &copy;2017  -
