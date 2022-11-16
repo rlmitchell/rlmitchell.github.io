@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        Listing all services and codes in AWS with Python - robmitchell.info
+        Disabling nolisten in lightdm on Ubuntu 20.04 - robmitchell.info
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,40 +20,44 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Here&amp;rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
- import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services &#43;= response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services &#43;= response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   Output:
-[{&#39;ServiceCode&#39;: &#39;AWSCloudMap&#39;, &#39;ServiceName&#39;: &#39;AWS Cloud Map&#39;}, {&#39;ServiceCode&#39;: &#39;a4b&#39;, &#39;ServiceName&#39;: &#39;Alexa for Business&#39;}, {&#39;ServiceCode&#39;: &#39;access-analyzer&#39;, &#39;ServiceName&#39;: &#39;Access Analyzer&#39;}, {&#39;ServiceCode&#39;: &#39;account&#39;, &#39;ServiceName&#39;: &#39;AWS Account Management&#39;}]   More formally:" />
+    <meta name="description" content="Requirements: The best way I&amp;rsquo;ve found to open more than one VSCode instances in linux is to run them under separate users. Problem is my Ubuntu 20.04 lightdm distribution is configured to nolisten out of the box. Here&amp;rsquo;s how to enable connections.
+Lightdm configuration file If it doesn&amp;rsquo;t already exist, create /etc/lightdm/lightdm.conf
+[SeatDefaults] xserver-allow-tcp=true [XDMCPServer] enabled=true  Once the file is in place restart lightdm or reboot.
+Verify Xorg is listening You should see a -listen argument in the Xorg program&amp;rsquo;s arg list:" />
     <meta name="generator" content="Hugo 0.68.3 with theme pure" />
-    <title>Listing all services and codes in AWS with Python - robmitchell.info</title>
+    <title>Disabling nolisten in lightdm on Ubuntu 20.04 - robmitchell.info</title>
     
     
     <link rel="stylesheet" href="https://rlmitchell.github.io/css/style.min.544edf4e480fd84dba4b535b9c42ace7af9a975d149b3f584c0e3a6f120cee55.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="Listing all services and codes in AWS with Python" />
-<meta property="og:description" content="Here&rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
- import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services &#43;= response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services &#43;= response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   Output:
-[{&#39;ServiceCode&#39;: &#39;AWSCloudMap&#39;, &#39;ServiceName&#39;: &#39;AWS Cloud Map&#39;}, {&#39;ServiceCode&#39;: &#39;a4b&#39;, &#39;ServiceName&#39;: &#39;Alexa for Business&#39;}, {&#39;ServiceCode&#39;: &#39;access-analyzer&#39;, &#39;ServiceName&#39;: &#39;Access Analyzer&#39;}, {&#39;ServiceCode&#39;: &#39;account&#39;, &#39;ServiceName&#39;: &#39;AWS Account Management&#39;}]   More formally:" />
+    <meta property="og:title" content="Disabling nolisten in lightdm on Ubuntu 20.04" />
+<meta property="og:description" content="Requirements: The best way I&rsquo;ve found to open more than one VSCode instances in linux is to run them under separate users. Problem is my Ubuntu 20.04 lightdm distribution is configured to nolisten out of the box. Here&rsquo;s how to enable connections.
+Lightdm configuration file If it doesn&rsquo;t already exist, create /etc/lightdm/lightdm.conf
+[SeatDefaults] xserver-allow-tcp=true [XDMCPServer] enabled=true  Once the file is in place restart lightdm or reboot.
+Verify Xorg is listening You should see a -listen argument in the Xorg program&rsquo;s arg list:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/" />
-<meta property="article:published_time" content="2022-11-11T01:48:00-05:00" />
-<meta property="article:modified_time" content="2022-11-11T01:48:00-05:00" />
-<meta itemprop="name" content="Listing all services and codes in AWS with Python">
-<meta itemprop="description" content="Here&rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
- import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services &#43;= response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services &#43;= response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   Output:
-[{&#39;ServiceCode&#39;: &#39;AWSCloudMap&#39;, &#39;ServiceName&#39;: &#39;AWS Cloud Map&#39;}, {&#39;ServiceCode&#39;: &#39;a4b&#39;, &#39;ServiceName&#39;: &#39;Alexa for Business&#39;}, {&#39;ServiceCode&#39;: &#39;access-analyzer&#39;, &#39;ServiceName&#39;: &#39;Access Analyzer&#39;}, {&#39;ServiceCode&#39;: &#39;account&#39;, &#39;ServiceName&#39;: &#39;AWS Account Management&#39;}]   More formally:">
-<meta itemprop="datePublished" content="2022-11-11T01:48:00-05:00" />
-<meta itemprop="dateModified" content="2022-11-11T01:48:00-05:00" />
-<meta itemprop="wordCount" content="157">
+<meta property="og:url" content="https://rlmitchell.github.io/2022/11/2022.11.15-ubuntu-2004-disable-nolisten/" />
+<meta property="article:published_time" content="2022-11-15T12:14:08-06:00" />
+<meta property="article:modified_time" content="2022-11-15T12:14:08-06:00" />
+<meta itemprop="name" content="Disabling nolisten in lightdm on Ubuntu 20.04">
+<meta itemprop="description" content="Requirements: The best way I&rsquo;ve found to open more than one VSCode instances in linux is to run them under separate users. Problem is my Ubuntu 20.04 lightdm distribution is configured to nolisten out of the box. Here&rsquo;s how to enable connections.
+Lightdm configuration file If it doesn&rsquo;t already exist, create /etc/lightdm/lightdm.conf
+[SeatDefaults] xserver-allow-tcp=true [XDMCPServer] enabled=true  Once the file is in place restart lightdm or reboot.
+Verify Xorg is listening You should see a -listen argument in the Xorg program&rsquo;s arg list:">
+<meta itemprop="datePublished" content="2022-11-15T12:14:08-06:00" />
+<meta itemprop="dateModified" content="2022-11-15T12:14:08-06:00" />
+<meta itemprop="wordCount" content="160">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Listing all services and codes in AWS with Python"/>
-<meta name="twitter:description" content="Here&rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
- import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services &#43;= response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services &#43;= response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   Output:
-[{&#39;ServiceCode&#39;: &#39;AWSCloudMap&#39;, &#39;ServiceName&#39;: &#39;AWS Cloud Map&#39;}, {&#39;ServiceCode&#39;: &#39;a4b&#39;, &#39;ServiceName&#39;: &#39;Alexa for Business&#39;}, {&#39;ServiceCode&#39;: &#39;access-analyzer&#39;, &#39;ServiceName&#39;: &#39;Access Analyzer&#39;}, {&#39;ServiceCode&#39;: &#39;account&#39;, &#39;ServiceName&#39;: &#39;AWS Account Management&#39;}]   More formally:"/>
+<meta name="twitter:title" content="Disabling nolisten in lightdm on Ubuntu 20.04"/>
+<meta name="twitter:description" content="Requirements: The best way I&rsquo;ve found to open more than one VSCode instances in linux is to run them under separate users. Problem is my Ubuntu 20.04 lightdm distribution is configured to nolisten out of the box. Here&rsquo;s how to enable connections.
+Lightdm configuration file If it doesn&rsquo;t already exist, create /etc/lightdm/lightdm.conf
+[SeatDefaults] xserver-allow-tcp=true [XDMCPServer] enabled=true  Once the file is in place restart lightdm or reboot.
+Verify Xorg is listening You should see a -listen argument in the Xorg program&rsquo;s arg list:"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -187,8 +191,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2022/11/2022.11.11-aws-get-all-services-listing/"
-    >Listing all services and codes in AWS with Python</a
+    href="/2022/11/2022.11.15-ubuntu-2004-disable-nolisten/"
+    >Disabling nolisten in lightdm on Ubuntu 20.04</a
   >
 </h1>
 
@@ -196,79 +200,47 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/" class="article-date">
-  <time datetime="2022-11-11 01:48:00 -0500 -0500" itemprop="datePublished">2022-11-11</time>
+<a href="https://rlmitchell.github.io/2022/11/2022.11.15-ubuntu-2004-disable-nolisten/" class="article-date">
+  <time datetime="2022-11-15 12:14:08 -0600 CST" itemprop="datePublished">2022-11-15</time>
 </a>
 </span>
-<span class="article-category">
-  <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/boto3/"> boto3 </a>
-  <a class="article-category-link" href="/categories/python/"> python </a>
-  <a class="article-category-link" href="/categories/aws/"> aws </a>
-</span>
+
 
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <hr>
-<p>Here&rsquo;s how you can get all the service names and associated service codes in AWS.  The code also shows how to
-page through the output easily.</p>
-<p> </p>
-<pre><code class="language-python">import boto3 
-from pprint import pprint
-
-services = []
-client = boto3.client('service-quotas')
-response = client.list_services(MaxResults=100)
-next_token = response.get('NextToken')
-services += response['Services']
-
-while next_token:
-    response = client.list_services(NextToken=next_token,MaxResults=100)
-    services += response['Services']
-    next_token = response.get('NextToken',False)
-
-#pprint(services)
-pprint(services[:4])   #limit the example output
+      <h4 id="requirements">Requirements:</h4>
+<p>The best way I&rsquo;ve found to open more than one VSCode instances in linux is to run them under separate users.  Problem
+is my Ubuntu 20.04 lightdm distribution is configured to nolisten out of the box.  Here&rsquo;s how to enable connections.</p>
+<h4 id="lightdm-configuration-file">Lightdm configuration file</h4>
+<p>If it doesn&rsquo;t already exist, create /etc/lightdm/lightdm.conf</p>
+<pre><code class="language-bash">[SeatDefaults]
+xserver-allow-tcp=true
+        
+[XDMCPServer]
+enabled=true
 </code></pre>
-<p> </p>
-<p>Output:</p>
-<pre><code class="language-python">[{'ServiceCode': 'AWSCloudMap', 'ServiceName': 'AWS Cloud Map'},
- {'ServiceCode': 'a4b', 'ServiceName': 'Alexa for Business'},
- {'ServiceCode': 'access-analyzer', 'ServiceName': 'Access Analyzer'},
- {'ServiceCode': 'account', 'ServiceName': 'AWS Account Management'}]
+<p>Once the file is in place restart lightdm or reboot.</p>
+<h4 id="verify-xorg-is-listening">Verify Xorg is listening</h4>
+<p>You should see a <code>-listen</code> argument in the Xorg program&rsquo;s arg list:</p>
+<pre><code class="language-bash">$ ps -ef |grep Xorg
+root         639     597 11 11:52 tty7     00:06:03 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -listen tcp vt7 -novtswitch
+$
 </code></pre>
-<p> </p>
-<p>More formally:</p>
-<pre><code class="language-python">import boto3
-from pprint import pprint
-
-class AWSAllServices:
-    def __init__(self, access_key=None, secret_key=None):
-        self.services = []
-        if not access_key:
-            self.client = boto3.client('service-quotas')
-        else:
-            self.client = boto3.client('service-quotas', 
-                                       region_name = 'us-east-1',
-                                       aws_access_key_id = access_key,
-                                       aws_secret_access_key = secret_key)
-
-    def __call__(self):
-        return self.get_services()
-
-    def get_services(self):
-        response = self.client.list_services(MaxResults=100)
-        next_token = response.get('NextToken')
-        self.services += response['Services']
-        while next_token:
-            response = self.client.list_services(NextToken=next_token,MaxResults=100)
-            self.services += response['Services']
-            next_token = response.get('NextToken',False)
-        return self.services
-
-if __name__ == '__main__':
-    pprint(AWSAllServices()())
+<h4 id="allow-connection">Allow connection</h4>
+<p>Next allow X11 connections to your display from your ip address.</p>
+<pre><code class="language-bash">$ id
+uid=1000(rob) gid=1000(rob) groups=1000(rob),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),121(lpadmin),131(lxd),132(sambashare)
+$ xhost +192.168.1.83 
+192.168.1.83 being added to access control list
+$
+</code></pre>
+<h4 id="verify-x11-connection-with-a-separate-account">Verify X11 connection with a separate account</h4>
+<p>Finally, under a separate account, startup VSCode.</p>
+<pre><code class="language-bash">$ id
+uid=1001(blog) gid=1001(blog) groups=1001(blog)
+$ export DISPLAY=:0.0
+$ code .
 </code></pre>
 
     </div>
@@ -278,14 +250,9 @@ if __name__ == '__main__':
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://rlmitchell.github.io/2022/11/2022.11.11-markdown-blank-lines/" title="Blank lines in markdown"><i
+                <a href="https://rlmitchell.github.io/2022/11/2022.11.11-purge-old-rds-manual-snapshots-with-boto3/" title="Purging old manual snapshots in AWS RDS with Python"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="https://rlmitchell.github.io/2022/11/2022.11.11-aws-ses-get-quota/"
-                    title="Getting send quota in AWS SES with Python"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-        Listing all services and codes in AWS with Python - robmitchell.info
+        Boto3 client for AWS RDS - robmitchell.info
       </title>
         <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,40 +20,32 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="Here&amp;rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
- import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services &#43;= response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services &#43;= response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   Output:
-[{&#39;ServiceCode&#39;: &#39;AWSCloudMap&#39;, &#39;ServiceName&#39;: &#39;AWS Cloud Map&#39;}, {&#39;ServiceCode&#39;: &#39;a4b&#39;, &#39;ServiceName&#39;: &#39;Alexa for Business&#39;}, {&#39;ServiceCode&#39;: &#39;access-analyzer&#39;, &#39;ServiceName&#39;: &#39;Access Analyzer&#39;}, {&#39;ServiceCode&#39;: &#39;account&#39;, &#39;ServiceName&#39;: &#39;AWS Account Management&#39;}]   More formally:" />
+    <meta name="description" content="Requirements  boto3   RDSClient class class RDSClient: def __init__(self, DBIdentifier=None, access_key=None, secret_key=None, region=None): if not access_key: self.client = boto3.client(&#39;rds&#39;) else: self.client = boto3.client(&#39;rds&#39;, region_name = region, aws_access_key_id = access_key, aws_secret_access_key = secret_key) self.db_identifier = DBIdentifier def get_manual_snapshots(self): if self.db_identifier == None: return None manual_snapshots = [] for snapshot in self.client.describe_db_snapshots(SnapshotType=&#39;manual&#39;,DBInstanceIdentifier=self.db_identifier).get(&#39;DBSnapshots&#39;, None): manual_snapshots.append( (snapshot[&#39;SnapshotCreateTime&#39;], snapshot[&#39;DBSnapshotIdentifier&#39;]) ) manual_snapshots.sort() return manual_snapshots def get_instance_names(self): instance_name_list = [] instances = self.client.describe_db_instances().get(&#39;DBInstances&#39;, None) #MaxRecords defaults to 100 for instance in instances: instance_name_list." />
     <meta name="generator" content="Hugo 0.68.3 with theme pure" />
-    <title>Listing all services and codes in AWS with Python - robmitchell.info</title>
+    <title>Boto3 client for AWS RDS - robmitchell.info</title>
     
     
     <link rel="stylesheet" href="https://rlmitchell.github.io/css/style.min.544edf4e480fd84dba4b535b9c42ace7af9a975d149b3f584c0e3a6f120cee55.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-    <meta property="og:title" content="Listing all services and codes in AWS with Python" />
-<meta property="og:description" content="Here&rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
- import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services &#43;= response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services &#43;= response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   Output:
-[{&#39;ServiceCode&#39;: &#39;AWSCloudMap&#39;, &#39;ServiceName&#39;: &#39;AWS Cloud Map&#39;}, {&#39;ServiceCode&#39;: &#39;a4b&#39;, &#39;ServiceName&#39;: &#39;Alexa for Business&#39;}, {&#39;ServiceCode&#39;: &#39;access-analyzer&#39;, &#39;ServiceName&#39;: &#39;Access Analyzer&#39;}, {&#39;ServiceCode&#39;: &#39;account&#39;, &#39;ServiceName&#39;: &#39;AWS Account Management&#39;}]   More formally:" />
+    <meta property="og:title" content="Boto3 client for AWS RDS" />
+<meta property="og:description" content="Requirements  boto3   RDSClient class class RDSClient: def __init__(self, DBIdentifier=None, access_key=None, secret_key=None, region=None): if not access_key: self.client = boto3.client(&#39;rds&#39;) else: self.client = boto3.client(&#39;rds&#39;, region_name = region, aws_access_key_id = access_key, aws_secret_access_key = secret_key) self.db_identifier = DBIdentifier def get_manual_snapshots(self): if self.db_identifier == None: return None manual_snapshots = [] for snapshot in self.client.describe_db_snapshots(SnapshotType=&#39;manual&#39;,DBInstanceIdentifier=self.db_identifier).get(&#39;DBSnapshots&#39;, None): manual_snapshots.append( (snapshot[&#39;SnapshotCreateTime&#39;], snapshot[&#39;DBSnapshotIdentifier&#39;]) ) manual_snapshots.sort() return manual_snapshots def get_instance_names(self): instance_name_list = [] instances = self.client.describe_db_instances().get(&#39;DBInstances&#39;, None) #MaxRecords defaults to 100 for instance in instances: instance_name_list." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/" />
-<meta property="article:published_time" content="2022-11-11T01:48:00-05:00" />
-<meta property="article:modified_time" content="2022-11-11T01:48:00-05:00" />
-<meta itemprop="name" content="Listing all services and codes in AWS with Python">
-<meta itemprop="description" content="Here&rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
- import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services &#43;= response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services &#43;= response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   Output:
-[{&#39;ServiceCode&#39;: &#39;AWSCloudMap&#39;, &#39;ServiceName&#39;: &#39;AWS Cloud Map&#39;}, {&#39;ServiceCode&#39;: &#39;a4b&#39;, &#39;ServiceName&#39;: &#39;Alexa for Business&#39;}, {&#39;ServiceCode&#39;: &#39;access-analyzer&#39;, &#39;ServiceName&#39;: &#39;Access Analyzer&#39;}, {&#39;ServiceCode&#39;: &#39;account&#39;, &#39;ServiceName&#39;: &#39;AWS Account Management&#39;}]   More formally:">
-<meta itemprop="datePublished" content="2022-11-11T01:48:00-05:00" />
-<meta itemprop="dateModified" content="2022-11-11T01:48:00-05:00" />
-<meta itemprop="wordCount" content="157">
+<meta property="og:url" content="https://rlmitchell.github.io/2022/11/2022.11.10-boto3-aws-rds-client/" />
+<meta property="article:published_time" content="2022-11-10T17:14:00-05:00" />
+<meta property="article:modified_time" content="2022-11-10T17:14:00-05:00" />
+<meta itemprop="name" content="Boto3 client for AWS RDS">
+<meta itemprop="description" content="Requirements  boto3   RDSClient class class RDSClient: def __init__(self, DBIdentifier=None, access_key=None, secret_key=None, region=None): if not access_key: self.client = boto3.client(&#39;rds&#39;) else: self.client = boto3.client(&#39;rds&#39;, region_name = region, aws_access_key_id = access_key, aws_secret_access_key = secret_key) self.db_identifier = DBIdentifier def get_manual_snapshots(self): if self.db_identifier == None: return None manual_snapshots = [] for snapshot in self.client.describe_db_snapshots(SnapshotType=&#39;manual&#39;,DBInstanceIdentifier=self.db_identifier).get(&#39;DBSnapshots&#39;, None): manual_snapshots.append( (snapshot[&#39;SnapshotCreateTime&#39;], snapshot[&#39;DBSnapshotIdentifier&#39;]) ) manual_snapshots.sort() return manual_snapshots def get_instance_names(self): instance_name_list = [] instances = self.client.describe_db_instances().get(&#39;DBInstances&#39;, None) #MaxRecords defaults to 100 for instance in instances: instance_name_list.">
+<meta itemprop="datePublished" content="2022-11-10T17:14:00-05:00" />
+<meta itemprop="dateModified" content="2022-11-10T17:14:00-05:00" />
+<meta itemprop="wordCount" content="87">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Listing all services and codes in AWS with Python"/>
-<meta name="twitter:description" content="Here&rsquo;s how you can get all the service names and associated service codes in AWS. The code also shows how to page through the output easily.
- import boto3 from pprint import pprint services = [] client = boto3.client(&#39;service-quotas&#39;) response = client.list_services(MaxResults=100) next_token = response.get(&#39;NextToken&#39;) services &#43;= response[&#39;Services&#39;] while next_token: response = client.list_services(NextToken=next_token,MaxResults=100) services &#43;= response[&#39;Services&#39;] next_token = response.get(&#39;NextToken&#39;,False) #pprint(services) pprint(services[:4]) #limit the example output   Output:
-[{&#39;ServiceCode&#39;: &#39;AWSCloudMap&#39;, &#39;ServiceName&#39;: &#39;AWS Cloud Map&#39;}, {&#39;ServiceCode&#39;: &#39;a4b&#39;, &#39;ServiceName&#39;: &#39;Alexa for Business&#39;}, {&#39;ServiceCode&#39;: &#39;access-analyzer&#39;, &#39;ServiceName&#39;: &#39;Access Analyzer&#39;}, {&#39;ServiceCode&#39;: &#39;account&#39;, &#39;ServiceName&#39;: &#39;AWS Account Management&#39;}]   More formally:"/>
+<meta name="twitter:title" content="Boto3 client for AWS RDS"/>
+<meta name="twitter:description" content="Requirements  boto3   RDSClient class class RDSClient: def __init__(self, DBIdentifier=None, access_key=None, secret_key=None, region=None): if not access_key: self.client = boto3.client(&#39;rds&#39;) else: self.client = boto3.client(&#39;rds&#39;, region_name = region, aws_access_key_id = access_key, aws_secret_access_key = secret_key) self.db_identifier = DBIdentifier def get_manual_snapshots(self): if self.db_identifier == None: return None manual_snapshots = [] for snapshot in self.client.describe_db_snapshots(SnapshotType=&#39;manual&#39;,DBInstanceIdentifier=self.db_identifier).get(&#39;DBSnapshots&#39;, None): manual_snapshots.append( (snapshot[&#39;SnapshotCreateTime&#39;], snapshot[&#39;DBSnapshotIdentifier&#39;]) ) manual_snapshots.sort() return manual_snapshots def get_instance_names(self): instance_name_list = [] instances = self.client.describe_db_instances().get(&#39;DBInstances&#39;, None) #MaxRecords defaults to 100 for instance in instances: instance_name_list."/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -187,8 +179,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2022/11/2022.11.11-aws-get-all-services-listing/"
-    >Listing all services and codes in AWS with Python</a
+    href="/2022/11/2022.11.10-boto3-aws-rds-client/"
+    >Boto3 client for AWS RDS</a
   >
 </h1>
 
@@ -196,79 +188,60 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://rlmitchell.github.io/2022/11/2022.11.11-aws-get-all-services-listing/" class="article-date">
-  <time datetime="2022-11-11 01:48:00 -0500 -0500" itemprop="datePublished">2022-11-11</time>
+<a href="https://rlmitchell.github.io/2022/11/2022.11.10-boto3-aws-rds-client/" class="article-date">
+  <time datetime="2022-11-10 17:14:00 -0500 -0500" itemprop="datePublished">2022-11-10</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/aws/"> aws </a>
+  <a class="article-category-link" href="/categories/rds/"> rds </a>
   <a class="article-category-link" href="/categories/boto3/"> boto3 </a>
   <a class="article-category-link" href="/categories/python/"> python </a>
-  <a class="article-category-link" href="/categories/aws/"> aws </a>
 </span>
 
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
       <hr>
-<p>Here&rsquo;s how you can get all the service names and associated service codes in AWS.  The code also shows how to
-page through the output easily.</p>
+<h4 id="requirements">Requirements</h4>
+<ul>
+<li>boto3</li>
+</ul>
 <p> </p>
-<pre><code class="language-python">import boto3 
-from pprint import pprint
-
-services = []
-client = boto3.client('service-quotas')
-response = client.list_services(MaxResults=100)
-next_token = response.get('NextToken')
-services += response['Services']
-
-while next_token:
-    response = client.list_services(NextToken=next_token,MaxResults=100)
-    services += response['Services']
-    next_token = response.get('NextToken',False)
-
-#pprint(services)
-pprint(services[:4])   #limit the example output
-</code></pre>
-<p> </p>
-<p>Output:</p>
-<pre><code class="language-python">[{'ServiceCode': 'AWSCloudMap', 'ServiceName': 'AWS Cloud Map'},
- {'ServiceCode': 'a4b', 'ServiceName': 'Alexa for Business'},
- {'ServiceCode': 'access-analyzer', 'ServiceName': 'Access Analyzer'},
- {'ServiceCode': 'account', 'ServiceName': 'AWS Account Management'}]
-</code></pre>
-<p> </p>
-<p>More formally:</p>
-<pre><code class="language-python">import boto3
-from pprint import pprint
-
-class AWSAllServices:
-    def __init__(self, access_key=None, secret_key=None):
-        self.services = []
+<h4 id="rdsclient-class">RDSClient class</h4>
+<pre><code class="language-python">class RDSClient:
+    def __init__(self, DBIdentifier=None, access_key=None, secret_key=None, region=None):
         if not access_key:
-            self.client = boto3.client('service-quotas')
+            self.client = boto3.client('rds')
         else:
-            self.client = boto3.client('service-quotas', 
-                                       region_name = 'us-east-1',
+            self.client = boto3.client('rds',
+                                       region_name = region,
                                        aws_access_key_id = access_key,
                                        aws_secret_access_key = secret_key)
 
-    def __call__(self):
-        return self.get_services()
+        self.db_identifier = DBIdentifier
 
-    def get_services(self):
-        response = self.client.list_services(MaxResults=100)
-        next_token = response.get('NextToken')
-        self.services += response['Services']
-        while next_token:
-            response = self.client.list_services(NextToken=next_token,MaxResults=100)
-            self.services += response['Services']
-            next_token = response.get('NextToken',False)
-        return self.services
+    def get_manual_snapshots(self):
+        if self.db_identifier == None:
+            return None
+        manual_snapshots = []
+        for snapshot in self.client.describe_db_snapshots(SnapshotType='manual',DBInstanceIdentifier=self.db_identifier).get('DBSnapshots', None):
+            manual_snapshots.append( (snapshot['SnapshotCreateTime'], snapshot['DBSnapshotIdentifier']) )
+        manual_snapshots.sort()
+        return manual_snapshots
 
-if __name__ == '__main__':
-    pprint(AWSAllServices()())
+    def get_instance_names(self):
+        instance_name_list = []
+        instances = self.client.describe_db_instances().get('DBInstances', None)    #MaxRecords defaults to 100
+        for instance in instances:
+            instance_name_list.append( instance['DBInstanceIdentifier'] )
+        return tuple(set(instance_name_list))
+
+    def delete_manual_snapshot(self, snapshot_identifier):
+        response = self.client.delete_db_snapshot(DBSnapshotIdentifier=snapshot_identifier)
+        return response
+
 </code></pre>
 
     </div>
@@ -278,13 +251,13 @@ if __name__ == '__main__':
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://rlmitchell.github.io/2022/11/2022.11.11-markdown-blank-lines/" title="Blank lines in markdown"><i
+                <a href="https://rlmitchell.github.io/2022/11/2022.11.01-using-list-of-dicts-ansible/" title="Using a list of dictionaries in Ansible"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
             </li>
             <li class="next">
-                <a href="https://rlmitchell.github.io/2022/11/2022.11.11-aws-ses-get-quota/"
-                    title="Getting send quota in AWS SES with Python"><span>Newer&nbsp;&nbsp;</span><i
+                <a href="https://rlmitchell.github.io/2022/11/2022.11.11-markdown-blank-lines/"
+                    title="Blank lines in markdown"><span>Newer&nbsp;&nbsp;</span><i
                         class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
